@@ -69,6 +69,7 @@ limitations under the License.
         castReceiverManager.onSystemVolumeChanged = function(event) {
           console.log('Received System Volume Changed event: ' + event.data['level'] + ' ' +
               event.data['muted']);
+	  window.messageBus.send(event.senderId, event.data);
         };
 
         // create a CastMessageBus to handle messages for a custom namespace
